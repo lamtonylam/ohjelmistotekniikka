@@ -1,0 +1,1 @@
+Komentorivi ja versionhallinta ovat tuttuja tsohasta, lapiosta ja miniohtusta.
