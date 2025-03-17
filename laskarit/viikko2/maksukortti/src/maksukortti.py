@@ -8,6 +8,9 @@ class Maksukortti:
         # saldo on senteissä
         self.saldo = saldo
 
+    def saldo_euroina(self):
+        return self.saldo / 100
+
     def syo_edullisesti(self):
         if self.saldo >= EDULLINEN:
             self.saldo -= EDULLINEN
