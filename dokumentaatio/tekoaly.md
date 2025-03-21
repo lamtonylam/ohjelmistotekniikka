@@ -1,0 +1,1 @@
+Hyödynsin LLM:mää auttamaan minua koodaamaan eloranking algoritmin.
