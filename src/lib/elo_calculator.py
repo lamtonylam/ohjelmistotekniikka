@@ -1,3 +1,7 @@
+def round_number_two_decimals(number):
+    return round(number, 2)
+
+
 def calculate_elo(player1, player2, player1_elo, player2_elo, winner):
     """
     Calculate new Elo ratings for two players after a match.
@@ -31,4 +35,6 @@ def calculate_elo(player1, player2, player1_elo, player2_elo, winner):
         actual_score_player2 - expected_score_player2
     )
 
-    return new_player1_elo, new_player2_elo
+    return round_number_two_decimals(new_player1_elo), round_number_two_decimals(
+        new_player2_elo
+    )

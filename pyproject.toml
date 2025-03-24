@@ -10,6 +10,9 @@ python = "^3.9"
 invoke = "^2.2.0"
 
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
