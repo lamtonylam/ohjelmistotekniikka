@@ -1,5 +1,5 @@
 ### [Laskarit](https://github.com/lamtonylam/ohjelmistotekniikka/tree/main/laskarit)  
-### [Vaatimuusmäärittely](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/vaatimusmaarittely.md)  
+### [Vaatimusmäärittely](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/vaatimusmaarittely.md)  
 ### [Tuntikirjanpito](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/tuntikirjanpito.md)
 
 # Ohjelmistotekniikka, harjoitustyö
