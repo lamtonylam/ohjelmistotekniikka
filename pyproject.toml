@@ -12,6 +12,7 @@ invoke = "^2.2.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
+coverage = "^7.7.1"
 
 [build-system]
 requires = ["poetry-core"]
