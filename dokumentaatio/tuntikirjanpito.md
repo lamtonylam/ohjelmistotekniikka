@@ -6,3 +6,4 @@
 | 20.3. | 2| sqliten tietokannan alustus, invoken käyttöönotto |
 | 21.3. | 2| käyttäjän lisäämisen toiminto |
 | 24.3. | 0.5| unittestejä |
+| 26.3. | 0.5| coveragen setuppaminen ja invokekomentoja |
