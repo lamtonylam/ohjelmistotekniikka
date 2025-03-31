@@ -11,6 +11,7 @@ class UI:
         self.player2_var = StringVar()
         self.player1_won = BooleanVar()
         self.player2_won = BooleanVar()
+        self.status_message = StringVar()
 
     def start(self):
         # player 1 input
@@ -44,6 +45,12 @@ class UI:
             master=self.root, text="Create", command=self.create_player
         )
 
+        # status message on player creation
+        status_label = ttk.Label(
+            master=self.root,
+            textvariable=self.status_message,
+        )
+
         # layout grid
         player1_label.grid(row=0, column=0)
         player1_entry.grid(row=0, column=1)
@@ -57,11 +64,24 @@ class UI:
         player_creation_label.grid(row=5, column=0)
         player_creation_entry.grid(row=5, column=1)
         player_creation_button.grid(row=5, column=2)
+        status_label.grid(row=6, column=0, columnspan=3)
 
     def handle_submit(self):
         pass
 
     def create_player(self):
-        elo_service = EloService()
-        elo_service.create_user(self.create_player_name.get())
-        self.create_player_name.set("")
+        player_name = self.create_player_name.get()
+        if player_name:
+            try:
+                elo_service = EloService()
+                elo_service.create_user(player_name)
+                self.status_message.set(
+                    f"Player '{player_name}' has been added successfully!"
+                )
+                self.create_player_name.set("")
+            except Exception as e:
+                self.status_message.set(f"Error: {str(e)}")
+        else:
+            self.status_message.set("Error: Player name cannot be empty!")
+
+        self.root.after(3000, lambda: self.status_message.set(""))
