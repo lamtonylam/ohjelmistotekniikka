@@ -7,3 +7,4 @@
 | 21.3. | 2| käyttäjän lisäämisen toiminto |
 | 24.3. | 0.5| unittestejä |
 | 26.3. | 0.5| coveragen setuppaminen ja invokekomentoja |
+| 31.3. | 4| käyttäjän lisäyksen konfirmaatio, dokumentaation päivittämistä ja bugifixausta importtien suhteen |
