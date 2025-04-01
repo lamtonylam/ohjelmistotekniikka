@@ -83,5 +83,3 @@ class UI:
                 self.status_message.set(f"Error: {str(e)}")
         else:
             self.status_message.set("Error: Player name cannot be empty!")
-
-        self.root.after(3000, lambda: self.status_message.set(""))
