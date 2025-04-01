@@ -14,6 +14,7 @@ Etusivu
 ## Perusversion tarjoama toiminnallisuus
 
 - Käyttäjä voi kirjata matsin tulokset sovellukseen.
+- Käyttäjä voi lisätä käyttäjän
 - Matsin tulokset säilytetään tietokannassa
 - Käyttäjä voi nähdä parhaimmat pelaajat ELO-rankingin perusteella
 - Käyttäjä voi nähdä viimeisimmät pelitulokset
