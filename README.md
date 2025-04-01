@@ -8,6 +8,7 @@ Käyttäjät siis pelaavat oikeassa elämässä FIFA pelimatsin ja sen jälkeen 
 # Dokumentaatio
 ### [Vaatimusmäärittely](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/vaatimusmaarittely.md)  
 ### [Tuntikirjanpito](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/tuntikirjanpito.md)
+### [Tuntikirjanpito](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/changelog.md)
 
 # Asennus
 > [!IMPORTANT]  
