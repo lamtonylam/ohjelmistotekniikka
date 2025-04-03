@@ -9,4 +9,5 @@
 | 26.3. | 0.5| coveragen setuppaminen ja invokekomentoja |
 | 31.3. | 4| käyttäjän lisäyksen konfirmaatio, dokumentaation päivittämistä ja bugifixausta importtien suhteen |
 | 1.4. | 2| bugifixausta käyttäjän lisäyksen ilmoittamisessa, dokumentointia |
-|Summa | 15| |
+| 2.4. | 1| UI:n refaktrointia omiin komponentteihin |
+|Summa | 16| |
