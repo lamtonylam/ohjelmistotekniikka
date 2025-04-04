@@ -2,6 +2,7 @@ from tkinter import Tk, ttk, StringVar
 
 from ui.components.player_creation import PlayerCreationComponent
 from ui.components.match_submission import MatchSubmissionComponent
+from ui.components.player_table import PlayerTableComponent
 
 
 class UI:
@@ -18,6 +19,7 @@ class UI:
         # Initialize components
         self.match_submission = MatchSubmissionComponent(root)
         self.player_creation = PlayerCreationComponent(root)
+        self.player_table = PlayerTableComponent(root)
 
     def start(self):
         """Start the UI and arrange all components"""
@@ -30,3 +32,10 @@ class UI:
 
         # Initialize player creation component
         self.player_creation.initialize(row_offset=5)
+
+        # Add a separator placeholder
+        placeholder_label = ttk.Label(master=self.root, text="")
+        placeholder_label.grid(row=9, column=0)
+
+        # Initialize player table component
+        self.player_table.initialize(row_offset=10)

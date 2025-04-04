@@ -21,3 +21,11 @@ class EloService:
             user = self._user_repository.create_user(User(name))
 
         return user
+        
+    def get_all_users(self):
+        """Retrieve all users from the repository
+        
+        Returns:
+            list: A list of all User objects
+        """
+        return self._user_repository.find_all_users()

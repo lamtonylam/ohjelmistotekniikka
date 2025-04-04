@@ -5,10 +5,10 @@ from services.elo_service import EloService
 
 class PlayerCreationComponent:
     """Component for creating new players"""
-    
+
     def __init__(self, root):
         """Initialize the player creation component
-        
+
         Args:
             root: The tkinter parent element
         """
@@ -16,13 +16,13 @@ class PlayerCreationComponent:
         self.create_player_name = StringVar()
         self.status_message = StringVar()
         self.elo_service = EloService()
-        
+
     def initialize(self, row_offset=5):
         """Initialize the component UI elements
-        
+
         Args:
             row_offset: The starting row for component elements
-        
+
         Returns:
             StringVar: The status message variable for external access
         """
@@ -39,15 +39,15 @@ class PlayerCreationComponent:
             master=self.root,
             textvariable=self.status_message,
         )
-        
+
         # layout grid
         player_creation_label.grid(row=row_offset, column=0)
         player_creation_entry.grid(row=row_offset, column=1)
         player_creation_button.grid(row=row_offset, column=2)
-        status_label.grid(row=row_offset+1, column=0, columnspan=3)
-        
+        status_label.grid(row=row_offset + 1, column=0, columnspan=3)
+
         return self.status_message
-        
+
     def create_player(self):
         """Handle player creation button click"""
         player_name = self.create_player_name.get()
@@ -58,6 +58,7 @@ class PlayerCreationComponent:
                     f"Player '{player_name}' has been added successfully!"
                 )
                 self.create_player_name.set("")
+
             except Exception as e:
                 self.status_message.set(f"Error: {str(e)}")
         else:

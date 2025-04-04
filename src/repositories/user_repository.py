@@ -4,7 +4,7 @@ from entities.user import User
 
 def get_user_by_row(row):
     if row:
-        return User(row["id"], row["name"], row["elo_rating"])
+        return User(row["name"], row["id"], row["elo_rating"])
     return None
 
 
