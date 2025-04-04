@@ -1,4 +1,4 @@
-from tkinter import Tk, ttk, StringVar, BooleanVar
+from tkinter import Tk, ttk, StringVar, BooleanVar, Frame
 from services.elo_service import EloService
 
 
@@ -23,6 +23,7 @@ class UI:
         self.status_message = StringVar()
 
         self.players = []
+        self.player_table_frame = None
 
     def start(self):
         """Start the UI and arrange all components"""
@@ -106,7 +107,7 @@ class UI:
                     f"Player '{player_name}' has been added successfully!"
                 )
                 self.create_player_name.set("")
-                self.fetch_users()
+                self.refresh_player_table()
             except Exception as e:
                 self.status_message.set(f"Error: {str(e)}")
         else:
@@ -116,17 +117,55 @@ class UI:
         """Fetch all users from the EloService"""
         self.players = self.elo_service.get_all_users()
 
+    def refresh_player_table(self):
+        """Refresh the player table by destroying and recreating the player frame"""
+        if self.player_table_frame:
+            self.player_table_frame.destroy()
+
+        self.initialize_player_table(row_offset=10)
+
     def initialize_player_table(self, row_offset=10):
-        """Initialize the player table UI elements
+        """Initialize the player table UI elements with a frame-based approach
 
         Args:
             row_offset: The starting row for component elements
         """
-        # Fetch users
         self.fetch_users()
 
-        # Create a label for each player
+        # creates a root frame for the player table
+        self.player_table_frame = Frame(self.root)
+        self.player_table_frame.grid(
+            row=row_offset, column=0, columnspan=3, sticky="ew"
+        )
+
+
+        # create header frame
+        header_frame = Frame(self.player_table_frame)
+        header_frame.pack(fill="x")
+
+        # on the left "player list" text, apart of headerframe
+        table_header = ttk.Label(header_frame, text="Player List")
+        table_header.pack(side="left", anchor="w", padx=5)
+
+        # refresh button on the right, apart of header frame
+        refresh_button = ttk.Button(
+            master=header_frame,
+            text="Refresh Players",
+            command=self.refresh_player_table,
+        )
+        refresh_button.pack(side="right", anchor="e", padx=5)
+
+        # player list frame
+        player_list_frame = Frame(self.player_table_frame)
+        player_list_frame.pack(fill="x", expand=True, pady=5)
+
+        # adding each player with pack to the player list frame
         for i, player in enumerate(self.players):
-            player_label = ttk.Label(self.root, text=player.name)
-            # Display label
-            player_label.grid(row=row_offset + i, column=0, sticky="w")
+            player_row = Frame(player_list_frame)
+            player_row.pack(fill="x", pady=2)
+
+            player_label = ttk.Label(player_row, text=player.name)
+            player_label.pack(side="left", anchor="w", padx=5)
+
+            elo_label = ttk.Label(player_row, text=f"{player.elo_rating}")
+            elo_label.pack(side="right", anchor="e", padx=5)
