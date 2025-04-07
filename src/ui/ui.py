@@ -27,6 +27,8 @@ class UI:
 
         self.match_submission_frame = None
 
+        self.player_creation_frame = None
+
     def start(self):
         """Start the UI and arrange all components"""
         self.initialize_match_submission(row_offset=0)
@@ -109,24 +111,49 @@ class UI:
         Returns:
             StringVar: The status message variable for external access
         """
-        player_creation_label = ttk.Label(master=self.root, text="Create Player:")
-        player_creation_entry = ttk.Entry(
-            master=self.root, textvariable=self.create_player_name
+
+        # creates a root frame for the player creation
+        self.player_creation_frame = Frame(self.root)
+        self.player_creation_frame.grid(
+            row=row_offset, column=0, columnspan=3, sticky="ew"
         )
+        # create header frame
+        header_frame = Frame(self.player_creation_frame)
+        header_frame.pack(fill="x")
+
+        # header
+        table_header = ttk.Label(header_frame, text="Create a player")
+        table_header.pack(side="left", anchor="w", padx=5)
+
+        # player creation frame
+        player_creation_frame = Frame(self.player_creation_frame)
+        player_creation_frame.pack(fill="x")
+
+        # player input
+        player_label = ttk.Label(player_creation_frame, text="Insert name of player")
+        player_label.pack(side="left", anchor="w", padx=5)
+        player_entry = ttk.Entry(
+            player_creation_frame, textvariable=self.create_player_name
+        )
+        player_entry.pack(side="left", anchor="w", padx=5)
+
+        # submit button frame
+        submit_frame = Frame(self.player_creation_frame)
+        submit_frame.pack(fill="x", pady=5)
+
+        # Create button
+        player_creation_frame = Frame(self.player_creation_frame)
         player_creation_button = ttk.Button(
-            master=self.root, text="Create", command=self.create_player
+            master=submit_frame, text="Create", command=self.create_player
         )
+        player_creation_button.pack(side="top", anchor="center", pady=5)
+
         # status message on player creation
         status_label = ttk.Label(
-            master=self.root,
+            master=player_creation_frame,
             textvariable=self.status_message,
         )
-        # layout grid
-        player_creation_label.grid(row=row_offset, column=0)
-        player_creation_entry.grid(row=row_offset, column=1)
-        player_creation_button.grid(row=row_offset, column=2)
-        status_label.grid(row=row_offset + 1, column=0, columnspan=3)
-        return self.status_message
+        status_label.pack(side="top", anchor="center", pady=5)
 
     def create_player(self):
         """Handle player creation button click"""
