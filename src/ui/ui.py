@@ -25,6 +25,8 @@ class UI:
         self.players = []
         self.player_table_frame = None
 
+        self.match_submission_frame = None
+
     def start(self):
         """Start the UI and arrange all components"""
         self.initialize_match_submission(row_offset=0)
@@ -45,30 +47,59 @@ class UI:
         Args:
             row_offset: The starting row for component elements
         """
-        # player 1 input
-        player1_label = ttk.Label(master=self.root, text="Player 1:")
-        player1_entry = ttk.Entry(master=self.root, textvariable=self.player1_var)
-        # player 2 input
-        player2_label = ttk.Label(master=self.root, text="Player 2:")
-        player2_entry = ttk.Entry(master=self.root, textvariable=self.player2_var)
-        # winner checkboxes
-        player1_check = ttk.Checkbutton(
-            master=self.root, text="Player 1 won", variable=self.player1_won
-        )
-        player2_check = ttk.Checkbutton(
-            master=self.root, text="Player 2 won", variable=self.player2_won
-        )
-        # submit button
-        submit_button = ttk.Button(master=self.root, text="Submit")
 
-        # layout grid
-        player1_label.grid(row=row_offset, column=0)
-        player1_entry.grid(row=row_offset, column=1)
-        player2_label.grid(row=row_offset + 1, column=0)
-        player2_entry.grid(row=row_offset + 1, column=1)
-        player1_check.grid(row=row_offset + 2, column=0)
-        player2_check.grid(row=row_offset + 2, column=1)
-        submit_button.grid(row=row_offset + 3, column=0, columnspan=2)
+        # creates a root frame for the player table
+        self.match_submission_frame = Frame(self.root)
+        self.match_submission_frame.grid(
+            row=row_offset, column=0, columnspan=3, sticky="ew"
+        )
+        # create header frame
+        header_frame = Frame(self.match_submission_frame)
+        header_frame.pack(fill="x")
+
+        # on the left "player list" text, apart of headerframe
+        table_header = ttk.Label(header_frame, text="Record a match")
+        table_header.pack(side="left", anchor="w", padx=5)
+
+        # player creation frame
+        player_creation_frame = Frame(self.match_submission_frame)
+        player_creation_frame.pack(fill="x")
+
+        # player 1 input
+        player1_label = ttk.Label(player_creation_frame, text="Player 1:")
+        player1_label.pack(side="left", anchor="w", padx=5)
+        player1_entry = ttk.Entry(player_creation_frame, textvariable=self.player1_var)
+        player1_entry.pack(side="left", anchor="w", padx=5)
+
+        # player 1 input
+        player2_label = ttk.Label(player_creation_frame, text="Player 2:")
+        player2_label.pack(side="left", anchor="w", padx=5)
+        player2_entry = ttk.Entry(player_creation_frame, textvariable=self.player2_var)
+        player2_entry.pack(side="left", anchor="w", padx=5)
+
+        # winner checkboxes frame
+        winner_frame = Frame(self.match_submission_frame)
+        winner_frame.pack(fill="x", pady=5)
+
+        # player 1 won checkbox
+        player1_check = ttk.Checkbutton(
+            winner_frame, text="Player 1 won", variable=self.player1_won
+        )
+        player1_check.pack(side="left", anchor="w", padx=5)
+
+        # player 2 won checkbox
+        player2_check = ttk.Checkbutton(
+            winner_frame, text="Player 2 won", variable=self.player2_won
+        )
+        player2_check.pack(side="left", anchor="w", padx=5)
+
+        # submit button frame
+        submit_frame = Frame(self.match_submission_frame)
+        submit_frame.pack(fill="x", pady=5)
+
+        # submit button
+        submit_button = ttk.Button(submit_frame, text="Submit")
+        submit_button.pack(side="top", anchor="center", pady=5)
 
     def initialize_player_creation(self, row_offset=5):
         """Initialize the player creation UI elements
@@ -137,7 +168,6 @@ class UI:
         self.player_table_frame.grid(
             row=row_offset, column=0, columnspan=3, sticky="ew"
         )
-
 
         # create header frame
         header_frame = Frame(self.player_table_frame)
