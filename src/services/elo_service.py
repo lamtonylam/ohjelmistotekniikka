@@ -17,14 +17,14 @@ class EloService:
 
         if existing_user:
             raise UsernameExistsError(f"Username {name} already exists")
-        else:
-            user = self._user_repository.create_user(User(name))
+
+        user = self._user_repository.create_user(User(name))
 
         return user
-        
+
     def get_all_users(self):
         """Retrieve all users from the repository
-        
+
         Returns:
             list: A list of all User objects
         """

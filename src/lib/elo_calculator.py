@@ -16,7 +16,7 @@ def calculate_elo(player1, player2, player1_elo, player2_elo, winner):
         A tuple containing the new Elo ratings (new_player1_elo, new_player2_elo).
     """
 
-    K_FACTOR = 32
+    k_factor = 32
 
     expected_score_player1 = 1 / (1 + 10 ** ((player2_elo - player1_elo) / 400))
     expected_score_player2 = 1 / (1 + 10 ** ((player1_elo - player2_elo) / 400))
@@ -24,14 +24,17 @@ def calculate_elo(player1, player2, player1_elo, player2_elo, winner):
     if winner == player1:
         actual_score_player1 = 1
         actual_score_player2 = 0
-    else:
+    elif winner == player2:
         actual_score_player1 = 0
         actual_score_player2 = 1
+    else:
+        actual_score_player1 = 0.5
+        actual_score_player2 = 0.5
 
-    new_player1_elo = player1_elo + K_FACTOR * (
+    new_player1_elo = player1_elo + k_factor * (
         actual_score_player1 - expected_score_player1
     )
-    new_player2_elo = player2_elo + K_FACTOR * (
+    new_player2_elo = player2_elo + k_factor * (
         actual_score_player2 - expected_score_player2
     )
 

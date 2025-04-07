@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 invoke = "^2.2.0"
+pylint = "^3.3.6"
+autopep8 = "^2.3.2"
 
 
 [tool.poetry.group.dev.dependencies]
