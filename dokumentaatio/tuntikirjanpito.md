@@ -10,4 +10,5 @@
 | 31.3. | 4| käyttäjän lisäyksen konfirmaatio, dokumentaation päivittämistä ja bugifixausta importtien suhteen |
 | 1.4. | 2| bugifixausta käyttäjän lisäyksen ilmoittamisessa, dokumentointia |
 | 2.4. | 1| UI:n refaktrointia omiin komponentteihin |
-|Summa | 16| |
+| 4.4. | 3| pelaajien listaukset sekä refaktorointia yhtenäiseen ui.py tiedostoon |
+|Summa | 19| |
