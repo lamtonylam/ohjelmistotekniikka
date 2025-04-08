@@ -6,6 +6,7 @@ Käyttäjät siis pelaavat oikeassa elämässä FIFA pelimatsin ja sen jälkeen 
 
 
 # Dokumentaatio
+### [Arkkitehtuuri](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/arkkitehtuuri.md)  
 ### [Vaatimusmäärittely](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/vaatimusmaarittely.md)  
 ### [Tuntikirjanpito](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/tuntikirjanpito.md)
 ### [Changelog](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/changelog.md)
@@ -60,3 +61,12 @@ poetry run invoke coverage-report
 ```
 
 Raportti generoituu _htmlcov_-hakemistoon.
+
+
+### Pylint
+
+Koodin staattisen analyysin voi suorittaa komennolla:
+
+```bash
+poetry run invoke lint
+```
