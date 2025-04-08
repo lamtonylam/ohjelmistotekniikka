@@ -4,7 +4,7 @@
 Sovelluksen avulla käyttäjät voivat kirjata sovellukseen FIFA-pelimatsien tuloksen ja saada oman ELO-ratingin. Sovellus näyttää myös viimeisimmät tulokset sekä parhaimpien pelaajien statistiikat.
 
 ## Käyttäjät
-ALkuvaiheessa soveluksessa on ei ole käyttäjiä, vaan tulokset laitetaan suoraan sovellukseen. Myöhemmin sovellukseen saatetaan lisätä käyttäjät.
+Alkuvaiheessa soveluksessa on ei ole käyttäjiä, vaan tulokset laitetaan suoraan sovellukseen. Myöhemmin sovellukseen saatetaan lisätä käyttäjät.
 
 ## Käyttöliittymäluonnos
 
@@ -13,11 +13,13 @@ Etusivu
 
 ## Perusversion tarjoama toiminnallisuus
 
-- Käyttäjä voi kirjata matsin tulokset sovellukseen.
-- Käyttäjä voi lisätä käyttäjän
-- Matsin tulokset säilytetään tietokannassa
-- Käyttäjä voi nähdä parhaimmat pelaajat ELO-rankingin perusteella
-- Käyttäjä voi nähdä viimeisimmät pelitulokset
+- [ ] Käyttäjä voi kirjata matsin tulokset sovellukseen.
+- [x] Käyttäjä voi lisätä pelaajan
+- [x] Käyttäjä voi nähdä pelaajalistauksen
+- [x] Käyttäjät säilytetään tietokannassa
+- [ ] Matsin tulokset säilytetään tietokannassa
+- [ ] Käyttäjä voi nähdä parhaimmat pelaajat ELO-rankingin perusteella
+- [ ] Käyttäjä voi nähdä viimeisimmät pelitulokset
 
 ## Jatkokehitysideoita
 
