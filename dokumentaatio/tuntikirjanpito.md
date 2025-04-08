@@ -12,4 +12,4 @@
 | 2.4. | 1| UI:n refaktrointia omiin komponentteihin |
 | 4.4. | 3| pelaajien listaukset sekä refaktorointia yhtenäiseen ui.py tiedostoon |
 | 7.4. | 3| UI:n refaktorointia käyttämään Frameja, pylintin käyttöönotto |
-|Summa | 19| |
+|Summa | 22| |
