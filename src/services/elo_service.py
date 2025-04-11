@@ -29,3 +29,12 @@ class EloService:
             list: A list of all User objects
         """
         return self._user_repository.find_all_users()
+
+    def find_user_by_id(self, user_id):
+        return self._user_repository.find_user_by_id(user_id)
+
+    def find_user_by_username(self, username):
+        return self._user_repository.find_user_by_username(username)
+
+    def update_user_elo(self, user_id, elo):
+        return self._user_repository.update_user_elo(user_id, elo)

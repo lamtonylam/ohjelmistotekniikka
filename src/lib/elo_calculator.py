@@ -2,42 +2,21 @@ def round_number_two_decimals(number):
     return round(number, 2)
 
 
-def calculate_elo(player1, player2, player1_elo, player2_elo, winner):
-    """
-    Calculate new Elo ratings for two players after a match.
-    K rating factor is set to 32.
-    Args:
-        player1: player name for the first player.
-        player2: player name for the second player.
-        player1_elo: Current Elo rating of the first player.
-        player2_elo: Current Elo rating of the second player.
-        winner: player name of the player who won the match (either player1 or player2).
-    Returns:
-        A tuple containing the new Elo ratings (new_player1_elo, new_player2_elo).
-    """
+def calculate_elo(winner_elo, loser_elo):
 
     k_factor = 32
 
-    expected_score_player1 = 1 / (1 + 10 ** ((player2_elo - player1_elo) / 400))
-    expected_score_player2 = 1 / (1 + 10 ** ((player1_elo - player2_elo) / 400))
+    expected_score_winner = 1 / (1 + 10 ** ((loser_elo - winner_elo) / 400))
+    expected_score_loser = 1 / (1 + 10 ** ((winner_elo - loser_elo) / 400))
 
-    if winner == player1:
-        actual_score_player1 = 1
-        actual_score_player2 = 0
-    elif winner == player2:
-        actual_score_player1 = 0
-        actual_score_player2 = 1
-    else:
-        actual_score_player1 = 0.5
-        actual_score_player2 = 0.5
+    actual_score_winner = 1
+    actual_score_loser = 0
 
-    new_player1_elo = player1_elo + k_factor * (
-        actual_score_player1 - expected_score_player1
+    winner_new_elo = winner_elo + k_factor * (
+        actual_score_winner - expected_score_winner
     )
-    new_player2_elo = player2_elo + k_factor * (
-        actual_score_player2 - expected_score_player2
-    )
+    loser_new_elo = loser_elo + k_factor * (actual_score_loser - expected_score_loser)
 
-    return round_number_two_decimals(new_player1_elo), round_number_two_decimals(
-        new_player2_elo
+    return round_number_two_decimals(winner_new_elo), round_number_two_decimals(
+        loser_new_elo
     )

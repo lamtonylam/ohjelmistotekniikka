@@ -15,12 +15,9 @@ class TestEloCalculator(unittest.TestCase):
         self.assertEqual(rounded_number, 120.11)
 
     def test_correct_elo(self):
-        player1 = "Tony"
-        player2 = "Tomppa"
-        player1_elo = 1400
-        player2_elo = 1600
-        winner = player2
+        winner_elo = 1600
+        loser_elo = 1400
 
-        game_result = calculate_elo(player1, player2, player1_elo, player2_elo, winner)
+        game_result = calculate_elo(winner_elo, loser_elo)
 
-        self.assertEqual(game_result, (1392.31, 1607.69))
+        self.assertEqual(game_result, (1607.69, 1392.31))
