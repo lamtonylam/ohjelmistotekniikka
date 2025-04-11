@@ -31,6 +31,13 @@ class UserRepository:
 
         return get_user_by_row(row)
 
+    def find_user_by_id(self, user_id: int):
+        cursor = self._db.cursor()
+        cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
+        row = cursor.fetchone()
+
+        return get_user_by_row(row)
+
     def create_user(self, user: User):
         cursor = self._db.cursor()
         cursor.execute(
@@ -41,6 +48,14 @@ class UserRepository:
         self._db.commit()
 
         return user
+
+    def update_user_elo(self, user_id, elo):
+        cursor = self._db.cursor()
+        cursor.execute(
+            "UPDATE users SET elo_rating = ? WHERE id = ?",
+            (elo, user_id),
+        )
+        self._db.commit()
 
 
 user_repository = UserRepository(get_database_connection())

@@ -1,5 +1,3 @@
-
-
 from db.database_connection import get_database_connection
 
 
@@ -27,9 +25,11 @@ def create_tables(connection):
         """
         CREATE TABLE IF NOT EXISTS matches (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            player1_id INTEGER NOT NULL,
-            player2_id INTEGER NOT NULL,
-            winner INTEGER NOT NULL
+            winner INTEGER NOT NULL,
+            loser INTEGER NOT NULL,
+            date TEXT NOT NULL,
+            FOREIGN KEY (winner) REFERENCES users (id),
+            FOREIGN KEY (loser) REFERENCES users (id)
         );
     """
     )
