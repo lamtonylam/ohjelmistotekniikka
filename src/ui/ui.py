@@ -16,8 +16,7 @@ class UI:
 
         self.player1_var = StringVar()
         self.player2_var = StringVar()
-        self.player1_won = BooleanVar()
-        self.player2_won = BooleanVar()
+        self.winner_var = StringVar()
 
         self.create_player_name = StringVar()
         self.status_message = StringVar()
@@ -83,25 +82,43 @@ class UI:
         winner_frame = Frame(self.match_submission_frame)
         winner_frame.pack(fill="x", pady=5)
 
-        # player 1 won checkbox
-        player1_check = ttk.Checkbutton(
-            winner_frame, text="Player 1 won", variable=self.player1_won
+        # player 1 won radio button
+        player1_radio = ttk.Radiobutton(
+            winner_frame,
+            text="Player 1 won",
+            variable=self.winner_var,
+            value="player1",
         )
-        player1_check.pack(side="left", anchor="w", padx=5)
+        player1_radio.pack(side="left", anchor="w", padx=5)
 
-        # player 2 won checkbox
-        player2_check = ttk.Checkbutton(
-            winner_frame, text="Player 2 won", variable=self.player2_won
+        # player 2 won radio button
+        player2_radio = ttk.Radiobutton(
+            winner_frame,
+            text="Player 2 won",
+            variable=self.winner_var,
+            value="player2",
         )
-        player2_check.pack(side="left", anchor="w", padx=5)
+        player2_radio.pack(side="left", anchor="w", padx=5)
 
         # submit button frame
         submit_frame = Frame(self.match_submission_frame)
         submit_frame.pack(fill="x", pady=5)
 
         # submit button
-        submit_button = ttk.Button(submit_frame, text="Submit")
+        submit_button = ttk.Button(
+            submit_frame, text="Submit", command=self.handle_match_submit
+        )
         submit_button.pack(side="top", anchor="center", pady=5)
+
+    def handle_match_submit(self):
+        player1 = self.player1_var.get()
+        player2 = self.player2_var.get()
+        winner = self.winner_var.get()
+
+        if winner == "player1":
+            print("voittaja", player1)
+        else:
+            print("voittaja", player2)
 
     def initialize_player_creation(self, row_offset=5):
         """Initialize the player creation UI elements
