@@ -128,6 +128,8 @@ class UI:
 
         self.match_service.create_match(winner_username, loser_username)
 
+        self.refresh_player_table()
+
     def initialize_player_creation(self, row_offset=5):
         """Initialize the player creation UI elements
 
