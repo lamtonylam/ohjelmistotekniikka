@@ -13,5 +13,5 @@
 | 4.4. | 3| pelaajien listaukset sekä refaktorointia yhtenäiseen ui.py tiedostoon |
 | 7.4. | 3| UI:n refaktorointia käyttämään Frameja, pylintin käyttöönotto |
 | 11.4. | 4| matsien tallennus ominaisuuden työstyöä, refaktorointia, UI:ssa checkboxeista radiobuttoneiksi |
-
-|Summa | 26| |
+| 14.4. | 4| matsien tallennus ominaisuus työstö valmiiksi, testien tekemistä kattavuuden nostamiseksi, pelaajataulun järjestäminen elo-rankingin mukaan |
+|Summa | 30| |
