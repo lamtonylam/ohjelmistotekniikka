@@ -5,8 +5,7 @@
 
 Sekvenssikaavio käyttäjän luomisesta
 
-```
-mermaid
+```mermaid
 sequenceDiagram
   actor User_person
   participant UI
