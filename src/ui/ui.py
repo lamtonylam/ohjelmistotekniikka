@@ -19,6 +19,7 @@ class UI:
         self.player1_var = StringVar()
         self.player2_var = StringVar()
         self.winner_var = StringVar()
+        self.match_submission_status_message = StringVar()
 
         self.create_player_name = StringVar()
         self.status_message = StringVar()
@@ -112,9 +113,28 @@ class UI:
         )
         submit_button.pack(side="top", anchor="center", pady=5)
 
+        status_label = ttk.Label(
+            master=submit_frame,
+            textvariable=self.match_submission_status_message,
+        )
+        status_label.pack(side="top", anchor="center", pady=5)
+
     def handle_match_submit(self):
         player1 = self.player1_var.get()
         player2 = self.player2_var.get()
+
+        # if two usernames are the same show error
+        if player1 == player2:
+            self.match_submission_status_message.set(
+                "Two players' usernames cannot be the same!"
+            )
+            return
+
+        # if one of the player names are empty, show error
+        if not player1 or not player2:
+            self.match_submission_status_message.set("Player name cannot be empty!")
+            return
+
         winner = self.winner_var.get()
         winner_username = ""
         loser_username = ""
