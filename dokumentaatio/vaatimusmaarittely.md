@@ -13,12 +13,12 @@ Etusivu
 
 ## Perusversion tarjoama toiminnallisuus
 
-- [ ] Käyttäjä voi kirjata matsin tulokset sovellukseen.
+- [x] Käyttäjä voi kirjata matsin tulokset sovellukseen.
 - [x] Käyttäjä voi lisätä pelaajan
 - [x] Käyttäjä voi nähdä pelaajalistauksen
 - [x] Käyttäjät säilytetään tietokannassa
-- [ ] Matsin tulokset säilytetään tietokannassa
-- [ ] Käyttäjä voi nähdä parhaimmat pelaajat ELO-rankingin perusteella
+- [x] Matsin tulokset säilytetään tietokannassa
+- [x] Käyttäjä voi nähdä parhaimmat pelaajat ELO-rankingin perusteella
 - [ ] Käyttäjä voi nähdä viimeisimmät pelitulokset
 
 ## Jatkokehitysideoita

@@ -10,3 +10,8 @@
 - UI:n parannuksia, siirrytty Grid:eistä Frame:ihin
 - Pelaajalistaus, joka päivittyy myös, kun uusi pelaaja lisätään
 - Otettu pylint käyttöön
+
+## Viikko 5
+- Päätoiminnallisuus tehty, eli FIFA matsien talennus ja ELO rankingin päivittyminen sen jälkeen
+- Pelaajalistaus on nyt järjestetty suurimman ELO-pisteen mukaan
+- Nostettu testikattavuutta
