@@ -59,3 +59,6 @@ class MatchService:
         )
 
         return (player1_new_elo, player2_new_elo)
+
+    def find_match_by_id(self, id):
+        return self.match_repository.find_match_by_id(id)
