@@ -263,13 +263,19 @@ class UI:
         player_list_frame = Frame(self.player_table_frame)
         player_list_frame.pack(fill="x", expand=True, pady=5)
 
+        # sort players by elo rating in descending order
+        def get_elo_rating(player):
+            return player.elo_rating
+
+        sorted_players = sorted(self.players, key=get_elo_rating, reverse=True)
+
         # adding each player with pack to the player list frame
-        for i, player in enumerate(self.players):
+        for i, player in enumerate(sorted_players):
             player_row = Frame(player_list_frame)
             player_row.pack(fill="x", pady=2)
 
             player_label = ttk.Label(player_row, text=player.name)
             player_label.pack(side="left", anchor="w", padx=5)
 
-            elo_label = ttk.Label(player_row, text=f"{player.elo_rating}")
+            elo_label = ttk.Label(player_row, text=f"{round(player.elo_rating)}")
             elo_label.pack(side="right", anchor="e", padx=5)
