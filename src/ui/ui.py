@@ -1,5 +1,6 @@
 from tkinter import Tk, ttk, StringVar, BooleanVar, Frame
 from services.elo_service import EloService
+from services.match_service import MatchService
 
 
 class UI:
@@ -13,6 +14,7 @@ class UI:
         """
         self.root = root
         self.elo_service = EloService()
+        self.match_service = MatchService()
 
         self.player1_var = StringVar()
         self.player2_var = StringVar()
@@ -114,11 +116,17 @@ class UI:
         player1 = self.player1_var.get()
         player2 = self.player2_var.get()
         winner = self.winner_var.get()
+        winner_username = ""
+        loser_username = ""
 
         if winner == "player1":
-            print("voittaja", player1)
+            winner_username = player1
+            loser_username = player2
         else:
-            print("voittaja", player2)
+            winner_username = player2
+            loser_username = player1
+
+        self.match_service.create_match(winner_username, loser_username)
 
     def initialize_player_creation(self, row_offset=5):
         """Initialize the player creation UI elements
