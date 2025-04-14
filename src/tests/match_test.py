@@ -6,7 +6,7 @@ from services.match_service import MatchService
 from services.elo_service import EloService
 
 
-class TestUserCreation(unittest.TestCase):
+class TestMatches(unittest.TestCase):
     def setUp(self):
         build()
         self.match_service = MatchService()
