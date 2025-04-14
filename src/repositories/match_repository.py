@@ -18,5 +18,17 @@ class MatchRepository:
 
         return match
 
+    def find_match_by_id(self, id):
+        self._cursor.execute(
+            "SELECT id, winner, loser, date FROM matches WHERE id = ?",
+            (id,),
+        )
+        row = self._cursor.fetchone()
+
+        if not row:
+            return None
+
+        return Match(row["winner"], row["loser"], row["date"], match_id=row["id"])
+
 
 match_repository = MatchRepository(get_database_connection())
