@@ -1,12 +1,9 @@
-from entities.match import Match
-
-from repositories.match_repository import match_repository as default_match_repository
-from repositories.user_repository import user_repository as default_user_repository
-
 from datetime import datetime
 
+from entities.match import Match
+from repositories.match_repository import match_repository as default_match_repository
+from repositories.user_repository import user_repository as default_user_repository
 from lib.elo_calculator import calculate_elo
-
 from .elo_service import EloService
 
 
