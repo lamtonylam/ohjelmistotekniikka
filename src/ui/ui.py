@@ -131,16 +131,16 @@ class UI:
         player1 = self.player1_var.get()
         player2 = self.player2_var.get()
 
+        # if either player name is empty, show error
+        if not player1 or not player2:
+            self.match_submission_status_message.set("Player name cannot be empty!")
+            return
+
         # if two usernames are the same show error
         if player1 == player2:
             self.match_submission_status_message.set(
                 "Two players' usernames cannot be the same!"
             )
-            return
-
-        # if one of the player names are empty, show error
-        if not player1 or not player2:
-            self.match_submission_status_message.set("Player name cannot be empty!")
             return
 
         winner = self.winner_var.get()
