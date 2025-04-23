@@ -14,4 +14,5 @@
 | 7.4. | 3| UI:n refaktorointia käyttämään Frameja, pylintin käyttöönotto |
 | 11.4. | 4| matsien tallennus ominaisuuden työstyöä, refaktorointia, UI:ssa checkboxeista radiobuttoneiksi |
 | 14.4. | 4| matsien tallennus ominaisuus työstö valmiiksi, testien tekemistä kattavuuden nostamiseksi, pelaajataulun järjestäminen elo-rankingin mukaan |
-|Summa | 30| |
+| 23.4. | 3| pelattujen matsien taulukko implementoitu, docstringien kirjoittelua, testitietokannan käyttöönotto, bugikorjausta |
+|Summa | 33| |
