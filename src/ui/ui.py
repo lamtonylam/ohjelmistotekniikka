@@ -25,11 +25,15 @@ class UI:
         self.status_message = StringVar()
 
         self.players = []
+
         self.player_table_frame = None
 
         self.match_submission_frame = None
 
         self.player_creation_frame = None
+
+        self.matches_frame = None
+        self.matches = []
 
     def start(self):
         """Start the UI and arrange all components"""
@@ -44,6 +48,8 @@ class UI:
         placeholder_label.grid(row=9, column=0)
 
         self.initialize_player_table(row_offset=10)
+
+        self.initialize_match_table(row_offset=20)
 
     def initialize_match_submission(self, row_offset=0):
         """Initialize the match submission UI elements
@@ -62,7 +68,9 @@ class UI:
         header_frame.pack(fill="x")
 
         # on the left "player list" text, apart of headerframe
-        table_header = ttk.Label(header_frame, text="Record a match")
+        table_header = ttk.Label(
+            header_frame, text="Record a match", font=("Helvetica", 16, "bold")
+        )
         table_header.pack(side="left", anchor="w", padx=5)
 
         # player creation frame
@@ -148,7 +156,7 @@ class UI:
 
         self.match_service.create_match(winner_username, loser_username)
 
-        self.refresh_player_table()
+        self.refresh_tables()
 
     def initialize_player_creation(self, row_offset=5):
         """Initialize the player creation UI elements
@@ -169,7 +177,9 @@ class UI:
         header_frame.pack(fill="x")
 
         # header
-        table_header = ttk.Label(header_frame, text="Create a player")
+        table_header = ttk.Label(
+            header_frame, text="Create a player", font=("Helvetica", 16, "bold")
+        )
         table_header.pack(side="left", anchor="w", padx=5)
 
         # player creation frame
@@ -212,7 +222,7 @@ class UI:
                     f"Player '{player_name}' has been added successfully!"
                 )
                 self.create_player_name.set("")
-                self.refresh_player_table()
+                self.refresh_tables()
             except Exception as e:
                 self.status_message.set(f"Error: {str(e)}")
         else:
@@ -222,12 +232,15 @@ class UI:
         """Fetch all users from the EloService"""
         self.players = self.elo_service.get_all_users()
 
-    def refresh_player_table(self):
+    def refresh_tables(self):
         """Refresh the player table by destroying and recreating the player frame"""
         if self.player_table_frame:
             self.player_table_frame.destroy()
+            if self.matches_frame:
+                self.matches_frame.destroy()
 
         self.initialize_player_table(row_offset=10)
+        self.initialize_match_table(row_offset=20)
 
     def initialize_player_table(self, row_offset=10):
         """Initialize the player table UI elements with a frame-based approach
@@ -248,7 +261,9 @@ class UI:
         header_frame.pack(fill="x")
 
         # on the left "player list" text, apart of headerframe
-        table_header = ttk.Label(header_frame, text="Player List")
+        table_header = ttk.Label(
+            header_frame, text="Player List", font=("Helvetica", 16, "bold")
+        )
         table_header.pack(side="left", anchor="w", padx=5)
 
         # on the right "elo rating" text, apart of headerframe
@@ -266,7 +281,7 @@ class UI:
         sorted_players = sorted(self.players, key=get_elo_rating, reverse=True)
 
         # adding each player with pack to the player list frame
-        for i, player in enumerate(sorted_players):
+        for player in sorted_players:
             player_row = Frame(player_list_frame)
             player_row.pack(fill="x", pady=2)
 
@@ -275,3 +290,55 @@ class UI:
 
             elo_label = ttk.Label(player_row, text=f"{round(player.elo_rating)}")
             elo_label.pack(side="right", anchor="e", padx=5)
+
+    def fetch_matches(self):
+        """Fetch all matches from the MatchService"""
+        self.matches = self.match_service.get_all_matches()
+        self.matches.sort(key=lambda match: match.date, reverse=True)
+
+    def initialize_match_table(self, row_offset=10):
+        """Initialize match table that displays the played matches"""
+        self.fetch_matches()
+
+        self.matches_frame = Frame(self.root)
+        self.matches_frame.grid(row=row_offset, column=0, columnspan=3, sticky="ew")
+
+        header_frame = Frame(self.matches_frame)
+        header_frame.pack(fill="x")
+
+        table_header = ttk.Label(
+            header_frame, text="Matches", font=("Helvetica", 16, "bold")
+        )
+        table_header.pack(side="left", anchor="w", padx=5)
+
+        sorted_label = ttk.Label(
+            header_frame,
+            text="Matches are sorted from the most recent to the oldest",
+        )
+        sorted_label.pack(side="right", anchor="e", padx=5)
+
+        winner_loser_header_frame = Frame(self.matches_frame)
+        winner_loser_header_frame.pack(fill="x", pady=5)
+
+        winner_label = ttk.Label(winner_loser_header_frame, text="Winner")
+        winner_label.pack(side="left", anchor="w", padx=5)
+
+        loser_label = ttk.Label(winner_loser_header_frame, text="Loser")
+        loser_label.pack(side="left", anchor="e", padx=5)
+
+        for match in self.matches:
+            match_row = Frame(self.matches_frame)
+            match_row.pack(fill="x", pady=2)
+
+            player1_label = ttk.Label(
+                match_row, text=self.elo_service.find_user_by_id(match.winner).name
+            )
+            player1_label.pack(side="left", anchor="w", padx=5)
+
+            vs_label = ttk.Label(match_row, text="vs")
+            vs_label.pack(side="left", anchor="w", padx=5)
+
+            player2_label = ttk.Label(
+                match_row, text=self.elo_service.find_user_by_id(match.loser).name
+            )
+            player2_label.pack(side="left", anchor="w", padx=5)

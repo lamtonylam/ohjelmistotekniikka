@@ -30,5 +30,16 @@ class MatchRepository:
 
         return Match(row["winner"], row["loser"], row["date"], match_id=row["id"])
 
+    def get_all_matches(self):
+        self._cursor.execute("SELECT id, winner, loser, date FROM matches")
+        rows = self._cursor.fetchall()
+
+        matches = []
+        for row in rows:
+            match = Match(row["winner"], row["loser"], row["date"], match_id=row["id"])
+            matches.append(match)
+
+        return matches
+
 
 match_repository = MatchRepository(get_database_connection())

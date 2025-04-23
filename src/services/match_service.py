@@ -59,3 +59,6 @@ class MatchService:
 
     def find_match_by_id(self, id):
         return self.match_repository.find_match_by_id(id)
+
+    def get_all_matches(self):
+        return self.match_repository.get_all_matches()
