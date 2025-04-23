@@ -5,3 +5,4 @@ __pycache__
 .coverage
 htmlcov
 database.db
+.vscode/settings.json

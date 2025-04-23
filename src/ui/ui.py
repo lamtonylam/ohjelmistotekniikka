@@ -251,13 +251,9 @@ class UI:
         table_header = ttk.Label(header_frame, text="Player List")
         table_header.pack(side="left", anchor="w", padx=5)
 
-        # refresh button on the right, apart of header frame
-        refresh_button = ttk.Button(
-            master=header_frame,
-            text="Refresh Players",
-            command=self.refresh_player_table,
-        )
-        refresh_button.pack(side="right", anchor="e", padx=5)
+        # on the right "elo rating" text, apart of headerframe
+        elo_header = ttk.Label(header_frame, text="Elo Rating")
+        elo_header.pack(side="right", anchor="e", padx=5)
 
         # player list frame
         player_list_frame = Frame(self.player_table_frame)
