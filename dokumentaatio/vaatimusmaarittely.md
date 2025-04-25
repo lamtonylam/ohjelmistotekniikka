@@ -19,7 +19,7 @@ Etusivu
 - [x] Käyttäjät säilytetään tietokannassa
 - [x] Matsin tulokset säilytetään tietokannassa
 - [x] Käyttäjä voi nähdä parhaimmat pelaajat ELO-rankingin perusteella
-- [ ] Käyttäjä voi nähdä viimeisimmät pelitulokset
+- [x] Käyttäjä voi nähdä viimeisimmät pelitulokset
 
 ## Jatkokehitysideoita
 
