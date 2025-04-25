@@ -7,3 +7,4 @@ htmlcov
 database.db
 *.db
 .vscode/settings.json
+*.pdf
