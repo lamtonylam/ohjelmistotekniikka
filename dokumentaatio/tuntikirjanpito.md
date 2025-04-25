@@ -15,4 +15,5 @@
 | 11.4. | 4| matsien tallennus ominaisuuden työstyöä, refaktorointia, UI:ssa checkboxeista radiobuttoneiksi |
 | 14.4. | 4| matsien tallennus ominaisuus työstö valmiiksi, testien tekemistä kattavuuden nostamiseksi, pelaajataulun järjestäminen elo-rankingin mukaan |
 | 23.4. | 3| pelattujen matsien taulukko implementoitu, docstringien kirjoittelua, testitietokannan käyttöönotto, bugikorjausta |
-|Summa | 33| |
+| 25.4. | 3| Käyttöliittymän edistämistä moninäkymäiseksi, lisää docstringeja, tietojen exporttaus PDF-tiedostoon ominaisuuden työstöä erillisessä branchissä |
+|Summa | 36| |
