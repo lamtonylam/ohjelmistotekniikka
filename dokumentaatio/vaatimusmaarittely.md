@@ -28,3 +28,4 @@ Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seura
 - Käyttäjä voi rekisteröityä käyttäjätunnuksella ja salasanalla
 - Käyttäjä voi kirjautua sisään käyttäjätunnuksella ja salasanalla
 - Käyttäjä voi ladata parhaimpien pelaajien listan .txt tiedostona tietokoneellensa
+- [x] Käyttäjä voi ladata .pdf tiedostona ohjelman tiedot pelaajista ja matseista tietkoneellensa
