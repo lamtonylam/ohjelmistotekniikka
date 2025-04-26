@@ -10,6 +10,7 @@ python = "^3.9"
 invoke = "^2.2.0"
 pylint = "^3.3.6"
 autopep8 = "^2.3.2"
+reportlab = "^4.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
