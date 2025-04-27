@@ -17,4 +17,5 @@
 | 23.4. | 3| pelattujen matsien taulukko implementoitu, docstringien kirjoittelua, testitietokannan käyttöönotto, bugikorjausta |
 | 25.4. | 3| Käyttöliittymän edistämistä moninäkymäiseksi, lisää docstringeja, tietojen exporttaus PDF-tiedostoon ominaisuuden työstöä erillisessä branchissä |
 | 26.4. | 2| Tietojen exporttaus PDF-tiedostoon ominaisuuden valmiiksi työstö |
-|Summa | 38| |
+| 27.4. | 2| pdf-exporttauksen tiedoston polun ja nimen valitseminen, pylint errorien fiksausta |
+|Summa | 40| |
