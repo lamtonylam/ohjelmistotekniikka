@@ -1,4 +1,4 @@
-from tkinter import ttk, constants
+from tkinter import ttk, constants, filedialog
 from services.pdf_service import PdfService
 
 
@@ -15,7 +15,13 @@ class PdfExportView:
         self._frame.pack(fill=constants.X)
 
     def handle_pdf_export(self):
-        self._pdf_service.generate_pdf()
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".pdf",
+            filetypes=[("PDF files", "*.pdf")],
+            title="Save PDF as",
+        )
+        if file_path:
+            self._pdf_service.generate_pdf(file_path)
 
     def destroy(self):
         self._frame.destroy()

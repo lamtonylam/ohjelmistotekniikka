@@ -12,11 +12,11 @@ class PdfService:
         self.elo_service = EloService()
         self.match_service = MatchService()
 
-    def generate_pdf(self):
+    def generate_pdf(self, filepath):
         """Generates a PDF report of the users and matches in the app"""
         users = self.elo_service.get_all_users()
         matches = self.match_service.get_all_matches()
-        c = canvas.Canvas("PDF-export.pdf", pagesize=(595.27, 841.89))  # A4 pagesize
+        c = canvas.Canvas(filepath, pagesize=(595.27, 841.89))  # A4 pagesize
 
         self._draw_title(c)
         y = self._draw_users(c, users)
