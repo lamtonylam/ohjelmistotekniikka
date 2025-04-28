@@ -18,4 +18,5 @@
 | 25.4. | 3| Käyttöliittymän edistämistä moninäkymäiseksi, lisää docstringeja, tietojen exporttaus PDF-tiedostoon ominaisuuden työstöä erillisessä branchissä |
 | 26.4. | 2| Tietojen exporttaus PDF-tiedostoon ominaisuuden valmiiksi työstö |
 | 27.4. | 2| pdf-exporttauksen tiedoston polun ja nimen valitseminen, pylint errorien fiksausta |
-|Summa | 40| |
+| 28.4. | 2| dokumentaatiota, UI:n bugifixausta, testikattavuuden nostoa |
+|Summa | 42| |
