@@ -17,7 +17,7 @@ sequenceDiagram
   User_person ->> UI: User clicks create User
   UI ->> EloService: create_user("tony123")
   EloService ->> UserRepository: find_user_by_username("tony123")
-  UserRepository -->> EloService: User
+  UserRepository -->> EloService: None
   EloService ->> User: User(name)
   User -->> EloService: User
   EloService ->> UserRepository: create_user(User)
