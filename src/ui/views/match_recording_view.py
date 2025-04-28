@@ -22,14 +22,14 @@ class MatchRecordingView:
         self.match_submission_status_message = StringVar()
 
         self.create_player_name = StringVar()
-        self.status_message = StringVar()
+        self.player_creation_status_message = StringVar()
 
         self.players = []
         self.matches = []
-        
+
         # Main container frame
         self._frame = None
-        
+
         # UI element frames
         self.match_submission_frame = None
         self.player_creation_frame = None
@@ -43,7 +43,7 @@ class MatchRecordingView:
         # Create the main frame
         self._frame = Frame(self.root)
         self._frame.pack(fill=constants.X)
-        
+
         self.initialize_match_submission()
 
         placeholder_label = ttk.Label(master=self._frame, text="")
@@ -188,7 +188,6 @@ class MatchRecordingView:
         submit_frame.pack(fill="x", pady=5)
 
         # Create button
-        player_creation_frame = Frame(self.player_creation_frame)
         player_creation_button = ttk.Button(
             master=submit_frame, text="Create", command=self.create_player
         )
@@ -196,8 +195,8 @@ class MatchRecordingView:
 
         # status message on player creation
         status_label = ttk.Label(
-            master=player_creation_frame,
-            textvariable=self.status_message,
+            master=submit_frame,
+            textvariable=self.player_creation_status_message,
         )
         status_label.pack(side="top", anchor="center", pady=5)
 
@@ -207,15 +206,17 @@ class MatchRecordingView:
         if player_name:
             try:
                 self.elo_service.create_user(player_name)
-                self.status_message.set(
+                self.player_creation_status_message.set(
                     f"Player '{player_name}' has been added successfully!"
                 )
                 self.create_player_name.set("")
                 self.refresh_tables()
             except Exception as e:
-                self.status_message.set(f"Error: {str(e)}")
+                self.player_creation_status_message.set(f"Error: {str(e)}")
         else:
-            self.status_message.set("Error: Player name cannot be empty!")
+            self.player_creation_status_message.set(
+                "Error: Player name cannot be empty!"
+            )
 
     def fetch_users(self):
         """Fetch all users from the EloService"""
