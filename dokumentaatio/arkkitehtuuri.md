@@ -20,7 +20,7 @@ sequenceDiagram
   UserRepository -->> EloService: None
   EloService ->> User: User(name)
   User -->> EloService: User
-  EloService ->> UserRepository: create_user(User)
+  EloService ->> UserRepository: create_user(User("tony123)
   UserRepository -->> EloService: User
   UI ->> UI: refresh_player_table()
 ```
