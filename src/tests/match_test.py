@@ -23,3 +23,11 @@ class TestMatches(unittest.TestCase):
         self.assertEqual(created_match.id, 1)
         self.assertEqual(created_match.winner, winner_id)
         self.assertEqual(created_match.loser, loser_id)
+
+    def test_get_al_matches(self):
+        self.match_service.create_match("winner1", "loser1")
+        self.match_service.create_match("winner1", "loser1")
+
+        matches = self.match_service.get_all_matches()
+
+        self.assertEqual(len(matches), 2)
