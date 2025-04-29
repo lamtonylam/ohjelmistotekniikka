@@ -5,7 +5,8 @@ Minulla on ajatuksena tehdä FIFA pelin **ELO** *ranking* työpöytäohjelmisto.
 Käyttäjät siis pelaavat oikeassa elämässä FIFA pelimatsin ja sen jälkeen kirjaavat tuloksen ja ELO rankingit muuttuvat.
 
 ## Release
-[Viikon 5 release](https://github.com/lamtonylam/ohjelmistotekniikka/releases/tag/viikko5)
+#### [Viikon 5 release](https://github.com/lamtonylam/ohjelmistotekniikka/releases/tag/viikko5)  
+#### [Viikon 6 release](https://github.com/lamtonylam/ohjelmistotekniikka/releases/tag/viikko6)
 
 # Dokumentaatio
 ### [Arkkitehtuuri](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/arkkitehtuuri.md)  
