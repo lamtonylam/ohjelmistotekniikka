@@ -15,3 +15,8 @@
 - Päätoiminnallisuus tehty, eli FIFA matsien talennus ja ELO rankingin päivittyminen sen jälkeen
 - Pelaajalistaus on nyt järjestetty suurimman ELO-pisteen mukaan
 - Nostettu testikattavuutta
+
+## Viikko 6
+- Sovelluksen tiedot voi exporttaa PDF-tiedostona omalle koneelleen
+- Nostettu testikattavuutta
+- Bugeja korjattu ja toimivuutta paranneltu
