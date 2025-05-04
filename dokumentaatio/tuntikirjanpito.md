@@ -20,4 +20,5 @@
 | 27.4. | 2| pdf-exporttauksen tiedoston polun ja nimen valitseminen, pylint errorien fiksausta |
 | 28.4. | 2| dokumentaatiota, UI:n bugifixausta, testikattavuuden nostoa |
 | 2.5. | 0,5| testikattavuuden nostoa |
-|Summa | 42,5| |
+| 4.5. | 0,5| bugifixausta, elo rating ei saa mennä alle 100 |
+|Summa | 43| |

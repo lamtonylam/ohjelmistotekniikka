@@ -43,6 +43,10 @@ class MatchService:
 
         winner_new_elo, loser_new_elo = self.compute_elo_ratings(winner_id, loser_id)
 
+        # elo ranking should not be less than 100, per us chess federation
+        winner_new_elo = max(winner_new_elo, 100)
+        loser_new_elo = max(loser_new_elo, 100)
+
         self.elo_service.update_user_elo(winner_id, winner_new_elo)
         self.elo_service.update_user_elo(loser_id, loser_new_elo)
 

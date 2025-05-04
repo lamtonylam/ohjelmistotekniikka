@@ -24,6 +24,21 @@ class TestMatches(unittest.TestCase):
         self.assertEqual(created_match.winner, winner_id)
         self.assertEqual(created_match.loser, loser_id)
 
+    def test_match_recording_with_one_player_having_really_low_elo_doesnt_go_below_100(
+        self,
+    ):
+        self.elo_service.create_user("winner1")
+        self.elo_service.create_user("loser1")
+        self.elo_service.update_user_elo(1, 1500)
+        loser_id = self.elo_service.find_user_by_username("loser1").id
+        self.elo_service.update_user_elo(loser_id, 101)
+
+        self.match_service.create_match("winner1", "loser1")
+
+        self.assertGreaterEqual(
+            self.elo_service.find_user_by_id(loser_id).elo_rating, 100
+        )
+
     def test_get_al_matches(self):
         self.match_service.create_match("winner1", "loser1")
         self.match_service.create_match("winner1", "loser1")
