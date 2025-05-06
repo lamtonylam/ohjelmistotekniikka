@@ -43,6 +43,13 @@ class MatchRecordingView:
         # Create the main frame
         self._frame = Frame(self.root)
         self._frame.pack(fill=constants.X)
+        
+        button = ttk.Button(
+            master=self._frame,
+            text="Back to main view",
+            command=self.handle_hello_view,
+        )
+        button.pack(side="top", anchor="center", pady=5)
 
         self.initialize_match_submission()
 
@@ -321,13 +328,6 @@ class MatchRecordingView:
                 match_row, text=self.elo_service.find_user_by_id(match.loser).name
             )
             player2_label.pack(side="left", anchor="w", padx=5)
-
-        button = ttk.Button(
-            master=self.matches_frame,
-            text="Back to main view",
-            command=self.handle_hello_view,
-        )
-        button.pack(side="top", anchor="center", pady=5)
 
     def destroy(self):
         """Destroy all frames and UI components in this view"""
