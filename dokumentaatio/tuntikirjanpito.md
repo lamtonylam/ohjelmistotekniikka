@@ -22,4 +22,4 @@
 | 2.5. | 0,5| testikattavuuden nostoa |
 | 4.5. | 0,5| bugifixausta, elo rating ei saa mennä alle 100 |
 | 6.5 | 1| interrogate kirjaston käyttöönotto docstring coveragea varten, docstringien tekoa |
-|Summa | 43| |
+|Summa | 44| |
