@@ -29,3 +29,8 @@ def coverage_report(ctx):
 @task
 def lint(ctx):
     ctx.run("pylint src")
+
+
+@task
+def docstring(ctx):
+    ctx.run("poetry run interrogate -v src/")
