@@ -51,10 +51,35 @@ class EloService:
         return self._user_repository.find_all_users()
 
     def find_user_by_id(self, user_id):
+        """
+        Retrieves a user by their unique identifier.
+
+        Args:
+            user_id (int): The unique identifier of the user to find.
+
+        Returns:
+            User: The user object if found, None otherwise.
+        """
         return self._user_repository.find_user_by_id(user_id)
 
     def find_user_by_username(self, username):
+        """
+        Retrieves a user by their username.
+
+        Args:
+            username (str): The username of the user to find.
+
+        Returns:
+            User: The user object if found, None otherwise.
+        """
         return self._user_repository.find_user_by_username(username)
 
     def update_user_elo(self, user_id, elo):
+        """
+        Updates the Elo rating of a user.
+
+        Args:
+            user_id (int): The unique identifier of the user to update.
+            elo (int): The new Elo rating to set for the user.
+        """
         return self._user_repository.update_user_elo(user_id, elo)
