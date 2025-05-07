@@ -1,7 +1,8 @@
-# Ohjelmistotekniikka, harjoitustyö
+# FIFA Elo ranking app
 
-Minulla on ajatuksena tehdä FIFA pelin **ELO** _ranking_ työpöytäohjelmisto.
-Käyttäjät siis pelaavat oikeassa elämässä FIFA pelimatsin ja sen jälkeen kirjaavat tuloksen ja ELO rankingit muuttuvat.
+Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa esimerkiksi toimiston tai vaikka ainejörjestön parhaimmista FIFA-pelin pelaajista. Pelaajat saavat ELO-rankingin, joka muuttuu jokaisen tuloksen jälkeen. Mitä isompi piste-erotus pelaajilla on, sitä rajummin ELO muuttuu ylös tai alas.
+
+Sovelluksesta voi viedä omalle tietokoneellensa PDF-tiedostona exportin sovellukseen tallennetuista tiedoista (pelaajat ja matsit).
 
 ## Release
 
@@ -96,6 +97,7 @@ brew install poppler
 ```
 
 Ja sitten suorita
+
 ```bash
 poetry run invoke coverage-image
 ```
