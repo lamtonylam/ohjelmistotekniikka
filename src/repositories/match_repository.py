@@ -77,8 +77,7 @@ class MatchRepository:
 
         matches = []
         for row in rows:
-            match = Match(row["winner"], row["loser"], row["date"], match_id=row["id"])
-            matches.append(match)
+            matches.append(Match(row["winner"], row["loser"], row["date"], match_id=row["id"]))
 
         return matches
 

@@ -30,6 +30,7 @@ class UserRepository:
             db: The database connection object to be used for data storage and retrieval.
         """
         self._db = db
+        self._cursor = self._db.cursor()
 
     def find_all_users(self):
         """
@@ -42,14 +43,12 @@ class UserRepository:
         Returns:
             list: A list of user objects representing all users in the database.
         """
-        cursor = self._db.cursor()
-        cursor.execute("SELECT * FROM users")
-        rows = cursor.fetchall()
+        self._cursor.execute("SELECT * FROM users")
+        rows = self._cursor.fetchall()
 
         users = []
         for row in rows:
-            user = get_user_by_row(row)
-            users.append(user)
+            users.append(User(row["name"], row["id"], row["elo_rating"]))
 
         return users
 
@@ -64,11 +63,13 @@ class UserRepository:
             User: An instance of the User object if a matching user is found,
             or None if no user is found.
         """
-        cursor = self._db.cursor()
-        cursor.execute("SELECT * FROM users WHERE name = ?", (name,))
-        row = cursor.fetchone()
+        self._cursor.execute("SELECT * FROM users WHERE name = ?", (name,))
+        row = self._cursor.fetchone()
 
-        return get_user_by_row(row)
+        if not row:
+            return None
+
+        return User(row["name"], row["id"], row["elo_rating"])
 
     def find_user_by_id(self, user_id: int):
         """
@@ -81,11 +82,13 @@ class UserRepository:
             User: An instance of the User object if a user with the given ID exists.
             None: If no user with the given ID is found.
         """
-        cursor = self._db.cursor()
-        cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
-        row = cursor.fetchone()
+        self._cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
+        row = self._cursor.fetchone()
 
-        return get_user_by_row(row)
+        if not row:
+            return None
+
+        return User(row["name"], row["id"], row["elo_rating"])
 
     def create_user(self, user: User):
         """
@@ -98,8 +101,7 @@ class UserRepository:
         Returns:
             User: The created user instance.
         """
-        cursor = self._db.cursor()
-        cursor.execute(
+        self._cursor.execute(
             "INSERT INTO users (name, elo_rating) VALUES (?, ?)",
             (user.name, user.elo_rating),
         )
@@ -119,8 +121,7 @@ class UserRepository:
         Raises:
             sqlite3.DatabaseError: If there is an issue executing the database query.
         """
-        cursor = self._db.cursor()
-        cursor.execute(
+        self._cursor.execute(
             "UPDATE users SET elo_rating = ? WHERE id = ?",
             (elo, user_id),
         )
