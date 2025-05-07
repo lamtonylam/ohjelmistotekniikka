@@ -1,6 +1,6 @@
 # FIFA Elo ranking app
 
-Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa esimerkiksi toimiston tai vaikka ainejörjestön parhaimmista FIFA-pelin pelaajista. Pelaajat saavat ELO-rankingin, joka muuttuu jokaisen tuloksen jälkeen. Mitä isompi piste-erotus pelaajilla on, sitä rajummin ELO muuttuu ylös tai alas.
+Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa esimerkiksi toimiston tai vaikka ainejärjestön parhaimmista FIFA-pelin pelaajista. Pelaajat saavat ELO-rankingin, joka muuttuu jokaisen tuloksen jälkeen. Mitä isompi piste-erotus pelaajilla on, sitä dramaattisemmin ELO muuttuu ylös tai alas.
 
 Sovelluksesta voi viedä omalle tietokoneellensa PDF-tiedostona exportin sovellukseen tallennetuista tiedoista (pelaajat ja matsit).
 
