@@ -22,7 +22,7 @@ Käyttäjät siis pelaavat oikeassa elämässä FIFA pelimatsin ja sen jälkeen 
 1. Asenna riippuvuudet komennolla:
 
 ```bash
-poetry install
+poetry install --no-root
 ```
 
 2. Suorita vaadittavat alustustoimenpiteet komennolla:
