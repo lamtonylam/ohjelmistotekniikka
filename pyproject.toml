@@ -5,9 +5,6 @@ description = ""
 authors = ["Tony Lam <tony.lam@iki.fi>"]
 readme = "README.md"
 
-[tool.poetry.config]
-install-root = false
-
 [tool.poetry.dependencies]
 python = "^3.10"
 invoke = "^2.2.0"
