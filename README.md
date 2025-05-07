@@ -21,6 +21,8 @@ Käyttäjät siis pelaavat oikeassa elämässä FIFA pelimatsin ja sen jälkeen 
 
 ### [Changelog](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/changelog.md)
 
+### [Testausdokumentti](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/testaus.md)
+
 # Asennus
 
 > [!IMPORTANT]  
@@ -71,6 +73,32 @@ poetry run invoke coverage-report
 ```
 
 Raportti generoituu _htmlcov_-hakemistoon.
+
+### Testikattavuuden kuva ja badge
+
+Testikattavuudesta voi generoita kuvan ja badgen, joka päivittyy suoraan testausdokumenttiin komennoilla:
+
+Linux:
+
+```bash
+sudo apt update
+sudo apt install poppler-utils
+```
+
+MacOS:
+
+> [!IMPORTANT]  
+> huom Brew pitää olla asennettuna
+> asenna se [täältä](https://brew.sh/)
+
+```bash
+brew install poppler
+```
+
+Ja sitten suorita
+```bash
+poetry run invoke coverage-image
+```
 
 ### Pylint
 

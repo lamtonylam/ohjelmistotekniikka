@@ -34,3 +34,14 @@ def lint(ctx):
 @task
 def docstring(ctx):
     ctx.run("poetry run interrogate -v src/", pty=True)
+
+
+@task(coverage_report)
+def coverage_image(ctx):
+    ctx.run("coverage-badge -o dokumentaatio/kuvat/coverage.svg -f", pty=True)
+    ctx.run(
+        "weasyprint htmlcov/index.html dokumentaatio/kuvat/coverage_report.pdf",
+        pty=True,
+    )
+    ctx.run("python3 dokumentaatio/pdf_to_html.py", pty=True)
+    ctx.run("rm -rf dokumentaatio/kuvat/coverage_report.pdf", pty=True)
