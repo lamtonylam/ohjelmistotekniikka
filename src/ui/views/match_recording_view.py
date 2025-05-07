@@ -310,7 +310,10 @@ class MatchRecordingView:
         winner_label.pack(side="left", anchor="w", padx=5)
 
         loser_label = ttk.Label(winner_loser_header_frame, text="Loser")
-        loser_label.pack(side="left", anchor="e", padx=5)
+        loser_label.pack(side="left", anchor="w", padx=5)
+
+        date_label = ttk.Label(winner_loser_header_frame, text="Date")
+        date_label.pack(side="right", anchor="e", padx=5)
 
         for match in self.matches:
             match_row = Frame(self.matches_frame)
@@ -328,6 +331,9 @@ class MatchRecordingView:
                 match_row, text=self.elo_service.find_user_by_id(match.loser).name
             )
             player2_label.pack(side="left", anchor="w", padx=5)
+
+            date_label = ttk.Label(match_row, text=match.date)
+            date_label.pack(side="right", anchor="e", padx=5)
 
     def destroy(self):
         """Destroy all frames and UI components in this view"""
