@@ -43,7 +43,7 @@ class MatchRecordingView:
         # Create the main frame
         self._frame = Frame(self.root)
         self._frame.pack(fill=constants.X)
-        
+
         button = ttk.Button(
             master=self._frame,
             text="Back to main view",
@@ -134,6 +134,9 @@ class MatchRecordingView:
         status_label.pack(side="top", anchor="center", pady=5)
 
     def handle_match_submit(self):
+        """
+        Handles the submission of a match record by validating player names and winner selection.
+        """
         player1 = self.player1_var.get()
         player2 = self.player2_var.get()
 

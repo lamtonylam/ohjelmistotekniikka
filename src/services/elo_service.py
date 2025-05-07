@@ -4,6 +4,10 @@ from repositories.user_repository import user_repository as default_user_reposit
 
 
 class UsernameExistsError(Exception):
+    """
+    Exception raised when attempting to create a user with a username that already exists in the system.
+    """
+
     pass
 
 

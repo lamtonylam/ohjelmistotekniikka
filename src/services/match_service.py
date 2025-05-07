@@ -8,17 +8,35 @@ from .elo_service import EloService
 
 
 class MatchService:
+    """Service for managing matches and updating Elo ratings."""
 
     def __init__(
         self,
         match_repository=default_match_repository,
-        user_repostory=default_user_repository,
+        user_repository=default_user_repository,
     ):
+        """
+        Initialize the MatchService with repositories.
+
+        Args:
+            match_repository: Repository for match data.
+            user_repository: Repository for user data.
+        """
         self.match_repository = match_repository
-        self._user_repository = user_repostory
+        self._user_repository = user_repository
         self.elo_service = EloService()
 
     def create_match(self, winner_username, loser_username):
+        """
+        Creates a new match record between two users, updates their Elo ratings, and ensures both users exist.
+
+        Args:
+            winner_username (str): The username of the match winner.
+            loser_username (str): The username of the match loser.
+
+        Returns:
+            None
+        """
 
         # if one of the usernames is empty, dont proceed
         if not winner_username or not loser_username:
@@ -51,6 +69,16 @@ class MatchService:
         self.elo_service.update_user_elo(loser_id, loser_new_elo)
 
     def compute_elo_ratings(self, winner_id, loser_id):
+        """
+        Calculates and returns the new Elo ratings for the winner and loser of a match.
+
+        Args:
+            winner_id (int): The unique identifier of the winning user.
+            loser_id (int): The unique identifier of the losing user.
+
+        Returns:
+            tuple: A tuple containing the new Elo ratings (winner_new_elo, loser_new_elo).
+        """
         winner_elo = self.elo_service.find_user_by_id(winner_id).elo_rating
         loser_elo = self.elo_service.find_user_by_id(loser_id).elo_rating
 
@@ -62,7 +90,22 @@ class MatchService:
         return (player1_new_elo, player2_new_elo)
 
     def find_match_by_id(self, id):
+        """
+        Retrieve a match object by its unique identifier.
+
+        Args:
+            id (int): The unique identifier of the match to retrieve.
+
+        Returns:
+            Match: The match object corresponding to the given id, or None if not found.
+        """
         return self.match_repository.find_match_by_id(id)
 
     def get_all_matches(self):
+        """
+        Retrieves all match records from the match repository.
+
+        Returns:
+            list: A list of all match objects retrieved from the repository.
+        """
         return self.match_repository.get_all_matches()

@@ -5,6 +5,8 @@ from ui.views.pdf_export_view import PdfExportView
 
 
 class UI:
+    """Main UI class for the application."""
+
     def __init__(self, root):
         """
         Initializes the UI class with the given root window.
