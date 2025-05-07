@@ -22,10 +22,9 @@ class UI:
     def start(self):
         """
         Initializes the main application window.
-
-        Sets the title and size of window to 600x600 pixels.
         """
-        self._root.geometry("600x600")
+        self._root.geometry("")
+        self._root.update_idletasks()
         self._show_hello_view()
 
     def _hide_current_view(self):
