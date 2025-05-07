@@ -6,7 +6,7 @@ authors = ["Tony Lam <tony.lam@iki.fi>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 invoke = "^2.2.0"
 pylint = "^3.3.6"
 autopep8 = "^2.3.2"
