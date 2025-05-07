@@ -1,21 +1,28 @@
-
-
 # Ohjelmistotekniikka, harjoitustyö
-Minulla on ajatuksena tehdä FIFA pelin **ELO** *ranking* työpöytäohjelmisto.
+
+Minulla on ajatuksena tehdä FIFA pelin **ELO** _ranking_ työpöytäohjelmisto.
 Käyttäjät siis pelaavat oikeassa elämässä FIFA pelimatsin ja sen jälkeen kirjaavat tuloksen ja ELO rankingit muuttuvat.
 
 ## Release
-#### [Viikon 5 release](https://github.com/lamtonylam/ohjelmistotekniikka/releases/tag/viikko5)  
+
+#### [Viikon 5 release](https://github.com/lamtonylam/ohjelmistotekniikka/releases/tag/viikko5)
+
 #### [Viikon 6 release](https://github.com/lamtonylam/ohjelmistotekniikka/releases/tag/viikko6)
 
 # Dokumentaatio
-### [Arkkitehtuuri](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/arkkitehtuuri.md)  
-### [Käyttöohje](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/kayttoohje.md)  
-### [Vaatimusmäärittely](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/vaatimusmaarittely.md)  
+
+### [Arkkitehtuuri](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/arkkitehtuuri.md)
+
+### [Käyttöohje](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/kayttoohje.md)
+
+### [Vaatimusmäärittely](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/vaatimusmaarittely.md)
+
 ### [Tuntikirjanpito](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/tuntikirjanpito.md)
+
 ### [Changelog](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/changelog.md)
 
 # Asennus
+
 > [!IMPORTANT]  
 > Tarvitset koneellesi Python version 3.9 tai uudemman, jotta voit suorittaa ohjelman.
 
@@ -36,7 +43,6 @@ poetry run invoke build
 ```bash
 poetry run invoke start
 ```
-
 
 # Komentorivitoiminnot
 
@@ -66,7 +72,6 @@ poetry run invoke coverage-report
 
 Raportti generoituu _htmlcov_-hakemistoon.
 
-
 ### Pylint
 
 Koodin staattisen analyysin voi suorittaa komennolla:
@@ -74,3 +79,13 @@ Koodin staattisen analyysin voi suorittaa komennolla:
 ```bash
 poetry run invoke lint
 ```
+
+### Docstring-kattavuus
+
+Docstringien koodikattavuuden voi generoida komennolla
+
+```bash
+poetry run invoke docstring
+```
+
+Tulokset tulostuvat suoraan terminaaliin

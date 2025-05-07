@@ -23,4 +23,9 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.interrogate]
-exclude = ["/tests"]
+exclude = ["src/tests"]
+ignore-init-method = true
+ignore-init-module = true
+ignore-module = true
+ignore-private = true
+ignore-semiprivate = true
