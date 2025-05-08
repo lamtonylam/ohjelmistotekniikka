@@ -23,4 +23,5 @@
 | 4.5. | 0,5| bugifixausta, elo rating ei saa mennä alle 100 |
 | 6.5 | 1| interrogate kirjaston käyttöönotto docstring coveragea varten, docstringien tekoa |
 | 7.5 | 4| matsin päivämäärät näkyvät ohjelmassa, coveragen tilannetta kuvaavan kuvan automaattinen generointi, pre-commit hookkien implementointi, docstringien tekoa, dokumentaation päivitystä |
+| 8.5 | 2| testien kirjoittelua, dokumentaation kirjoittelua, refaktorointia pylint-virheiden korjailua|
 |Summa | 48| |
