@@ -105,7 +105,7 @@ MacOS:
 > asenna se [täältä](https://brew.sh/)
 
 ```bash
-brew install poppler
+brew install poppler pango cairo weasyprint
 ```
 
 Ja sitten suorita
