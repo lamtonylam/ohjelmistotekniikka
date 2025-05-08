@@ -5,7 +5,7 @@ from services.elo_service import EloService
 from build import build
 
 
-class TestUserCreation(unittest.TestCase):
+class TestUsers(unittest.TestCase):
     def setUp(self):
         build()
         self.user_service = EloService()
