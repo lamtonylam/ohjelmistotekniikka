@@ -24,6 +24,15 @@ class TestMatches(unittest.TestCase):
         self.assertEqual(created_match.winner, winner_id)
         self.assertEqual(created_match.loser, loser_id)
 
+    def test_match_recording_with_two_same_players_doesnt_record_a_match(self):
+        with self.assertRaises(Exception) as e:
+            self.match_service.create_match("winner1", "winner1")
+
+        self.assertEqual(str(e.exception), "A player cannot play against themselves")
+
+        all_matches = self.match_service.get_all_matches()
+        self.assertEqual(len(all_matches), 0)
+
     def test_match_recording_with_one_player_having_really_low_elo_doesnt_go_below_100(
         self,
     ):

@@ -28,7 +28,7 @@ class MatchService:
 
     def create_match(self, winner_username, loser_username):
         """
-        Creates a new match record between two users, updates their Elo ratings, 
+        Creates a new match record between two users, updates their Elo ratings,
         and ensures both users exist.
 
         Args:
@@ -42,6 +42,9 @@ class MatchService:
         # if one of the usernames is empty, dont proceed
         if not winner_username or not loser_username:
             return
+
+        if winner_username == loser_username:
+            raise Exception("A player cannot play against themselves")
 
         found_winner_user = self._user_repository.find_user_by_username(winner_username)
         found_loser_user = self._user_repository.find_user_by_username(loser_username)
