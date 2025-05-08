@@ -7,7 +7,8 @@ def main():
     """
     Initializes and starts the main application window.
 
-    Creates a Tkinter window, sets its title, initializes the UI view, and starts the main event loop.
+    Creates a Tkinter window, sets its title, initializes the UI view, 
+    and starts the main event loop.
     """
     window = Tk()
     window.title("Football Game Elo Rating App")

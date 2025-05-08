@@ -28,7 +28,8 @@ class MatchService:
 
     def create_match(self, winner_username, loser_username):
         """
-        Creates a new match record between two users, updates their Elo ratings, and ensures both users exist.
+        Creates a new match record between two users, updates their Elo ratings, 
+        and ensures both users exist.
 
         Args:
             winner_username (str): The username of the match winner.
@@ -89,17 +90,17 @@ class MatchService:
 
         return (player1_new_elo, player2_new_elo)
 
-    def find_match_by_id(self, id):
+    def find_match_by_id(self, match_id):
         """
         Retrieve a match object by its unique identifier.
 
         Args:
-            id (int): The unique identifier of the match to retrieve.
+            match_id (int): The unique identifier of the match to retrieve.
 
         Returns:
             Match: The match object corresponding to the given id, or None if not found.
         """
-        return self.match_repository.find_match_by_id(id)
+        return self.match_repository.find_match_by_id(match_id)
 
     def get_all_matches(self):
         """

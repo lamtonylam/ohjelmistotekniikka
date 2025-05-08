@@ -8,7 +8,7 @@ class User:
         elo_rating (int): The Elo rating of the user, defaults to 1500.
     """
 
-    def __init__(self, name: str, id: int = None, elo_rating: int = 1500):
-        self.id = id
+    def __init__(self, name: str, user_id: int = None, elo_rating: int = 1500):
+        self.id = user_id
         self.name = name
         self.elo_rating = elo_rating

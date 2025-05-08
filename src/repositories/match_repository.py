@@ -39,12 +39,12 @@ class MatchRepository:
 
         return match
 
-    def find_match_by_id(self, id):
+    def find_match_by_id(self, match_id):
         """
         Retrieves a match from the database by its ID.
 
         Args:
-            id (int): The unique identifier of the match to retrieve.
+            match_id (int): The unique identifier of the match to retrieve.
 
         Returns:
             Match: An instance of the Match class representing the match with the given ID,
@@ -52,7 +52,7 @@ class MatchRepository:
         """
         self._cursor.execute(
             "SELECT id, winner, loser, date FROM matches WHERE id = ?",
-            (id,),
+            (match_id,),
         )
         row = self._cursor.fetchone()
 
