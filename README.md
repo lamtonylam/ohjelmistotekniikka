@@ -37,6 +37,16 @@ Sovelluksesta voi viedä omalle tietokoneellensa PDF-tiedostona exportin sovellu
 poetry install --no-root
 ```
 
+> [!TIP]
+> Jos haluat määritellä itse SQLite-tietokantatiedoston nimen, luo `.env` tiedosto ja luo sinne seuraavat arvot:
+> 
+> ```
+> DATABASE_FILE_NAME="OMA_TIEDOSTO_NIMESI.db"
+> TEST_DATABASE_FILE_NAME="OMA_TESTITIEDOSTO_NIMESI.db"
+> ```
+>
+> Vaihtoehtoisesti voit myös jättää arvot määrittelemättä, jolloin sovellus asettaa tiedoston nimeksi oletukset.
+
 2. Suorita vaadittavat alustustoimenpiteet komennolla:
 
 ```bash
