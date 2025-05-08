@@ -24,6 +24,8 @@ Sovelluksesta voi viedä omalle tietokoneellensa PDF-tiedostona exportin sovellu
 
 ### [Testausdokumentti](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/testaus.md)
 
+### [Tekoälyn käyttö](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/tekoaly.md)
+
 # Asennus
 
 > [!IMPORTANT]  
