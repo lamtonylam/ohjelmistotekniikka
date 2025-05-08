@@ -48,7 +48,15 @@ class TestMatches(unittest.TestCase):
             self.elo_service.find_user_by_id(loser_id).elo_rating, 100
         )
 
-    def test_get_al_matches(self):
+    def test_match_recording_with_only_one_player(self):
+        with self.assertRaises(Exception):
+            self.match_service.create_match("winner1")
+
+        all_matches = self.match_service.get_all_matches()
+
+        self.assertEqual(len(all_matches), 0)
+
+    def test_get_all_matches(self):
         self.match_service.create_match("winner1", "loser1")
         self.match_service.create_match("winner1", "loser1")
 
