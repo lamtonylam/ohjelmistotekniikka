@@ -153,6 +153,12 @@ class MatchRecordingView:
             return
 
         winner = self.winner_var.get()
+
+        # if no winner is selected, show error
+        if not winner:
+            self.match_submission_status_message.set("Please select a winner!")
+            return
+
         winner_username = ""
         loser_username = ""
 
