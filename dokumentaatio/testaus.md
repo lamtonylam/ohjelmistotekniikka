@@ -7,9 +7,7 @@ Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein unitt
 
 ### Sovelluslogiikka
 
-Sovelluslogiikasta vastaavia `elo_service.py`, `match_service.py` testataan kullekin kuuluvalla testiluokalla. `TestMatches` ja `TestUsers`.
-
-PDF-eksporttaamista ei ole ollut mahdollista kurssin rajojen sisällä testata yksikkötestein, joten siitä ei ole testattu ja se on jätetty testikattavuuden ulkopuolelle.
+Sovelluslogiikasta vastaavia `elo_service.py`, `match_service.py`, `pdf_service` testataan kullekin kuuluvalla testiluokalla. `TestMatches` ja `TestUsers`, `TestPDFGeneration`.
 
 ### Repositorio-luokat
 Tietokantaoperaatioista vastaavia `match_repository.py` ja `user_repository` testataan integraatiotestaamisella, jossa sovelluslogiikka käyttää repostiroyluokkia.
@@ -17,7 +15,7 @@ Tietokantaoperaatioista vastaavia `match_repository.py` ja `user_repository` tes
 
 ### Testauskattavuus
 
-Käyttöliittymäkerrosta ja PDF_serviceä lukuunottamatta sovelluksen testauksen haarautumakattavuus on:
+Sovelluksen testauksen haarautumakattavuus on:
 ![](./kuvat/coverage.svg)  
 
 ![](./kuvat/page_1.png)
