@@ -5,23 +5,37 @@ Lataa projektin viimeisimmän [releasen](https://github.com/lamtonylam/ohjelmist
 
 ## Ohjelman käynnistäminen
 
-Ennen ohjelman käynnistämistä, asenna riippuvuudet komennolla:
+> [!IMPORTANT]  
+> Tarvitset koneellesi Python version 3.9 tai uudemman, jotta voit suorittaa ohjelman.
+
+1. Asenna riippuvuudet komennolla:
 
 ```bash
-poetry install
+poetry install --no-root
 ```
 
-Jonka jälkeen suorita alustustoimenpiteet komennolla:
+> [!TIP]
+> Jos haluat määritellä itse SQLite-tietokantatiedoston nimen, luo `.env` tiedosto ja luo sinne seuraavat arvot:
+> 
+> ```
+> DATABASE_FILE_NAME="OMA_TIEDOSTO_NIMESI.db"
+> TEST_DATABASE_FILE_NAME="OMA_TESTITIEDOSTO_NIMESI.db"
+> ```
+>
+> Vaihtoehtoisesti voit myös jättää arvot määrittelemättä, jolloin sovellus asettaa tiedoston nimeksi oletukset.
+
+2. Suorita vaadittavat alustustoimenpiteet komennolla:
 
 ```bash
 poetry run invoke build
 ```
 
-Nyt ohjelman voi käynnistää komennolla:
+3. Käynnistä sovellus komennolla:
 
-```
+```bash
 poetry run invoke start
 ```
+
 
 
 ## Aloitus
