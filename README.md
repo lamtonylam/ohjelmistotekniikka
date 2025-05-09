@@ -10,6 +10,8 @@ Sovelluksesta voi viedä omalle tietokoneellensa PDF-tiedostona exportin sovellu
 
 #### [Viikon 6 release](https://github.com/lamtonylam/ohjelmistotekniikka/releases/tag/viikko6)
 
+#### [Lopullinen release](https://github.com/lamtonylam/ohjelmistotekniikka/releases/tag/final)
+
 # Dokumentaatio
 
 ### [Arkkitehtuuri](https://github.com/lamtonylam/ohjelmistotekniikka/blob/main/dokumentaatio/arkkitehtuuri.md)
